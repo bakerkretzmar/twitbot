@@ -2,7 +2,7 @@
 var express = require("express");
 var app = express();
 app.get('/', function(req, res) {
-  res.send('The robot is anxiously running.');
+  res.send('<h1>The robot is anxiously running.</h1>');
 });
 app.listen(process.env.PORT || 5000);
 // END HEROKU SETUP
