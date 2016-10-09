@@ -46,7 +46,7 @@ function getListMembers(callback) {
         console.log(error);
         console.log(data);
       };
-    };
+    }
   );
 };
 
