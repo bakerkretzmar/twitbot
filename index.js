@@ -26,30 +26,29 @@ var config = {
 
 // Get the members of our list, and pass them into a callback function.
 function getListMembers(callback) {
-    var memberIDs = [];
+  var memberIDs = [];
 
-    tu.listMembers(
-      {
-        owner_screen_name: config.me,
-        slug: config.myList
-      },
+  tu.listMembers(
+    {
+      owner_screen_name: config.me,
+      slug: config.myList
+    },
 
     function(error, data){
-        if (!error) {
-            for (var i=0; i < data.users.length; i++) {
-                memberIDs.push(data.users[i].id_str);
-            }
+      if (!error) {
+        for (var i = 0; i < data.users.length; i++) {
+          memberIDs.push(data.users[i].id_str);
+        };
 
-            // This callback is designed to run listen(memberIDs).
-            callback(memberIDs);
-        } else {
-            console.log(error);
-            console.log(data);
-        }
-    }
-
-    );
-}
+        // This callback is designed to run listen(memberIDs).
+        callback(memberIDs);
+      } else {
+        console.log(error);
+        console.log(data);
+      };
+    };
+  );
+};
 
 // What to do after we retweet something.
 function onReTweet(err) {
